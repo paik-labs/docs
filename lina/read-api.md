@@ -21,6 +21,7 @@ The value is in `results[0].value`:
 | `step` | figure where the run is (in a subprocess: `Subprocess › Figure`); only while it runs |
 | `running` | `true` while the run goes on; `false` when it has ended or the page has none |
 | `since` | while running: when it got to `step`; after the end: when the run ended (ISO-8601, UTC) |
+| `run` | `running` or `ended` — the same as `running`, as text so it can be searched (`lina_run`) |
 
 ## Things to know
 

@@ -6,12 +6,14 @@ LINA makes the [document state](document-states.md) searchable in Confluence. Tw
 |---|---|
 | `lina_state` | the name of the state, as the template calls it, for example `Approved` |
 | `lina_state_group` | `in_progress`, `valid`, `invalid`, or `none` (LINA knows the page, but it has no state) |
+| `lina_run` | `running` or `ended` |
+| `lina_process` | the name of the template of the last run, for example `Document lifecycle` |
 
 ## Where to search
 
 1. *Confluence advanced search* — filters *LINA document state* and *LINA state group*.
 2. *CQL in the search address:* `/wiki/search?cql=lina_state%20%3D%20%22Approved%22`
-3. *Macros that accept CQL* — to list documents on a page, for example all valid policies of a space.
+3. The [LINA documents](macros.md#lina-documents) macro — a list on a page without writing CQL. Other macros that accept CQL work too.
 4. *The REST API* `GET /wiki/rest/api/search?cql=…` — for scripts and Automation.
 
 ## Examples

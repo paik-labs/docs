@@ -21,6 +21,7 @@ You draw the process yourself, once, as a template. Every page that runs it foll
 | move a document on although its ticket is not done | [Continue anyway](work-on-a-page.md#continue-anyway) |
 | decide when a Jira ticket counts as done, who may continue anyway | [Space settings](space-settings.md) |
 | know, from a Jira ticket, which document it belongs to | [LINA in Jira](jira.md) |
+| put the process history, or a list of documents with their state, on a page | [Macros](macros.md) |
 | find all approved or no longer valid documents | [Find documents by state](find-documents-by-state.md) |
 | read a page's state from a script or report | [Read the state of a page (API)](read-api.md) |
 | set up service accounts, templates in spaces, retention | [App configuration](app-configuration.md) |
