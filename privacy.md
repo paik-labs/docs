@@ -35,4 +35,4 @@ We do not sell or share data with anyone. Atlassian hosts and processes the data
 
 ## 6. Contact
 
-Questions about privacy: support@paiklabs.dev
+Questions about privacy: support@paiklabs.com

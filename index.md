@@ -12,4 +12,4 @@ A document in Confluence has a process. When it moves on, the work that follows 
 
 ## Support
 
-E-mail: support@paiklabs.dev
+E-mail: support@paiklabs.com

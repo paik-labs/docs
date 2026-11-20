@@ -20,7 +20,7 @@ The App runs entirely on Atlassian's infrastructure. How it handles data is desc
 
 ## 4. Support and changes
 
-We provide support by e-mail at support@paiklabs.dev. We may update the App, including adding or changing features; Atlassian delivers updates automatically.
+We provide support by e-mail at support@paiklabs.com. We may update the App, including adding or changing features; Atlassian delivers updates automatically.
 
 ## 5. No warranty
 
