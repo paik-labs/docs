@@ -9,12 +9,9 @@ You can see the whole circle — a page that waits for a Jira ticket and moves o
 
 ## Open the LINA administration
 
-Confluence admins open it from Atlassian Administration:
+Confluence admins: click the gear icon (*Confluence administration*) → in the sidebar under *Settings* expand *Apps* → **LINA**.
 
-1. Go to *admin.atlassian.com* → *Apps* → *Connected apps* (the name may differ slightly in your organization).
-2. Open LINA → tab *Connections* → next to Confluence open the *…* menu → *Get Started*.
-
-The administration opens on the **Get started** tab, next to **Templates** and **Configuration**. Bookmark the page: Confluence administration does not list it in its sidebar.
+The administration opens on the **Get started** tab, next to **Templates** and **Configuration**. The *Get Started* link shown after installing the app leads to the same page.
 
 Space admins without Confluence admin rights can start the sample from the [space overview](space-overview.md) of their own space instead: when nothing runs there yet, the overview offers it.
 

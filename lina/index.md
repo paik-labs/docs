@@ -36,7 +36,7 @@ You draw the process yourself, once, as a template. Every page that runs it foll
 | The **LINA** badge next to a page title | start a process, see what it waits for, move it on, history | everyone who can see the page |
 | Space sidebar → *Space apps* → LINA | [overview](space-overview.md) of processes in the space | everyone in the space |
 | *Space settings* → *Integrations* → LINA | [space settings](space-settings.md) and space templates | space admins |
-| LINA administration | [templates](design-a-template.md), [configuration](app-configuration.md), [Get started](getting-started.md) | Confluence admins |
+| *Confluence administration* → *Apps* → LINA | [templates](design-a-template.md), [configuration](app-configuration.md), [Get started](getting-started.md) | Confluence admins |
 | The *Source document* panel on a Jira ticket | [which document a ticket belongs to](jira.md) | everyone who can see the ticket |
 
 LINA works in English, Czech, German, French, Russian and Simplified Chinese, following the language in each user's Atlassian profile.
