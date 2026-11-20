@@ -11,7 +11,7 @@ You can see the whole circle — a page that waits for a Jira ticket and moves o
 
 Confluence admins: click the gear icon (*Confluence administration*) → in the sidebar under *Settings* expand *Apps* → **LINA**.
 
-The administration opens on the **Get started** tab, next to **Templates** and **Configuration**. The *Get Started* link shown after installing the app leads to the same page.
+The administration opens on the **Get started** tab, next to **Templates**, **Configuration** and **Support and documentation** (links to this documentation and to support). The *Get Started* link shown after installing the app leads to the same page.
 
 Space admins without Confluence admin rights can start the sample from the [space overview](space-overview.md) of their own space instead: when nothing runs there yet, the overview offers it.
 
