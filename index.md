@@ -1,8 +1,12 @@
+<img src="assets/paiklabs.svg" alt="PAIK Labs" width="72" height="72">
+
 # Paik Labs
 
 Apps for Atlassian Cloud.
 
 ## LINA — Document Workflow with Jira Issues for Confluence
+
+<img src="assets/lina.svg" alt="LINA" width="64" height="64">
 
 A document in Confluence has a process. When it moves on, the work that follows from it is created in Jira — and the document does not move further until that work is done.
 
