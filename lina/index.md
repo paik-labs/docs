@@ -1,3 +1,5 @@
+<img src="assets/lina.svg" alt="LINA" width="64" height="64">
+
 # LINA — documents that set work in motion
 
 LINA gives a Confluence page a process. When the document reaches a certain point, LINA creates the work that follows from it in Jira, and the document does not move on until that work is done.
