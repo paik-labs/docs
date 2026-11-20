@@ -43,7 +43,7 @@ Click **Open the sample page**.
 
 ## Next steps
 
-- Make your own process: copy the bundled template *Document lifecycle* and adjust it — see [Design a process template](design-a-template.md) and the [Examples](examples.md).
+- Make your own process: copy one of the five [sample templates](examples.md#ready-made-sample-templates) — review and yearly revision, proofreading, automatic start for new pages, specification to Jira work, decision record — and adjust it. See [Design a process template](design-a-template.md).
 - Let new pages get the process automatically: [Start a process automatically](start-automatically.md).
 - Decide what counts as a done ticket and who may skip the wait: [Space settings](space-settings.md).
 

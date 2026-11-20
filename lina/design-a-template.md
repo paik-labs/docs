@@ -2,7 +2,7 @@
 
 Templates are designed by Confluence admins in the LINA administration (tab **Templates**), and — if the app configuration allows it — by space admins for their own space (*Space settings* → *Integrations* → LINA → **Process templates**). The designer is the same in both places.
 
-The quickest start is a copy: select the bundled template *Document lifecycle* and click **Copy**. Then change what you need. The [Examples](examples.md) show common processes figure by figure.
+The quickest start is a copy of a [sample template](examples.md#ready-made-sample-templates): select one marked **Bundled** and click **Copy**. Then change what you need.
 
 ## The designer at a glance
 
@@ -135,6 +135,8 @@ Runs that already started keep the version they started with.
 - **Copy** makes a new draft template with the same drawing and states. The service account is not copied.
 - **Delete** removes the template. Running processes finish by the copy they started with. A subprocess template that another template uses cannot be deleted.
 
-## The bundled template
+## Sample templates
 
-*Document lifecycle* is marked **Bundled**. You can only view and copy it. It goes: *Draft* (a person confirms) → required review ticket → *Review* → *Approve?* (*Reject* with a comment goes back) → *Approved* for a year → revision ticket → *Expired* → *Keep the document?* (*Revise* or *Retire*). Its states are Draft, In review, Approved, Revision due and Retired. In your copy, choose the Jira project and issue type of the two tickets, then publish.
+The list starts with ready-made samples marked **Bundled**: *Document lifecycle*, *Procedure with proofreading* (with its subprocess *Proofreading*), *New procedures start by themselves*, *Specification to Jira work* and *Decision record*. You can only view and copy them. What each is for and what to fill in after **Copy**: [Examples](examples.md#ready-made-sample-templates).
+
+Copying a sample that uses a subprocess copies the subprocess too, and the copy points at the copied subprocess. Publish the subprocess first.

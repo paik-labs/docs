@@ -26,7 +26,8 @@ You draw the process yourself, once, as a template. Every page that runs it foll
 | set up service accounts, templates in spaces, retention | [App configuration](app-configuration.md) |
 | know who may do what | [Permissions](permissions.md) |
 | know what happens when a page is copied, moved or deleted | [Copy, move and delete pages](pages-copy-move-delete.md) |
-| build a common process step by step | [Examples](examples.md) |
+| start from a ready-made process (approval, proofreading, specification → Jira, decision record) | [Sample templates](examples.md#ready-made-sample-templates) |
+| build a common process step by step | [Examples](examples.md#draw-it-yourself) |
 | understand a message LINA shows | [Troubleshooting](troubleshooting.md) and [Publishing checks](reference/publish-checks.md) |
 
 ## Where LINA appears

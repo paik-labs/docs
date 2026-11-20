@@ -1,14 +1,64 @@
 # Examples
 
-Each example says what to draw. For the details of each step, follow the links to [Design a process template](design-a-template.md).
+## Ready-made sample templates
 
-## 1. Review, approval and yearly revision
+LINA comes with five sample processes. Find them at the top of the template list in the designer, marked **Bundled**. You can **View** them and **Copy** them; the copy is your own template, which you finish and publish.
 
-*A new policy must be reviewed by a colleague in Jira. Only then can it be approved or returned — with a reason. An approved policy is valid for a year, then it needs a revision.*
+| Sample | Use it for | What it shows | After **Copy** |
+|---|---|---|---|
+| *Document lifecycle* | policies, guidelines: review, approval, yearly revision, retirement | the whole cycle with document states and a due date | choose the Jira project and issue type of the two tickets |
+| *Procedure with proofreading* | handbooks, procedures that need a language check before approval | a [subprocess](design-a-template.md#subprocesses) with its own ticket | the subprocess *Proofreading* is copied too: choose the project and issue type in it, publish it first, then the procedure |
+| *New procedures start by themselves* | every new page under a parent page gets the review without a click | a [start rule](start-automatically.md) with a label condition | select **Start**, choose the **Space** and **Parent page**; choose the project and issue type of the tickets |
+| *Specification to Jira work* | specifications, change requests: approval creates the work | the approval creates the implementation ticket and the document waits until it is done | choose the project and issue type of the ticket |
+| *Decision record* | decisions, ADRs, meeting decisions — no Jira needed | a decision stays in force until it is marked superseded | nothing — publish it as it is |
 
-The fastest way: **Copy** the bundled *Document lifecycle* — it is exactly this process. In the copy, select the two lines with a ticket, choose the Jira project and issue type, and publish.
+Then **Save** and **Publish**. If something is missing, publishing tells you what ([Publishing checks](reference/publish-checks.md)).
 
-To draw it yourself:
+Change anything you like in the copy: names of figures and states, texts of tickets, due dates, who may start it. The samples themselves never change and never run.
+
+### Document lifecycle
+
+*Draft* (the author clicks **Continue**) → a required review ticket → *Review* → *Approve?*: *Approve* or *Reject* with a comment (back to *Draft*) → *Approved* for 365 days → a required revision ticket → *Expired* → *Keep the document?*: *Revise* (back to *Draft*) or *Retire* with a comment.
+
+States: *Draft*, *In review*, *Approved*, *Revision due* (valid), *Retired* (not valid — readers see the banner **This document is no longer valid**).
+
+### Procedure with proofreading
+
+*Draft* → subprocess *Proofreading* (a required ticket "Proofread …"; over when it is done) → *Approve?*: *Approve* (ends as *Approved*) or *Return* with a comment (back to *Draft*).
+
+While the editor works, the badge shows *LINA · Proofread · Proofreading › Proofread*. When the ticket is done, the procedure moves on by itself.
+
+States: *Draft*, *In proofreading*, *Proofread*, *Approved*.
+
+### New procedures start by themselves
+
+Starts on every new page created under the parent page you choose, if the page has the label `procedure`. A required review ticket is created at once → *Review* → *Approve?*: *Approve* (ends as *Published*) or *Return* with a comment → *Rework* (the author clicks **Continue**) → a new review ticket → *Review* again.
+
+Pages that get the label later, or are moved under the parent, do not start it — that is intended. To use other labels, edit the condition at **Start**.
+
+States: *In review*, *Rework*, *Published*.
+
+### Specification to Jira work
+
+*Draft* (the author clicks **Continue**) → *Approve?*: *Approve* creates the ticket "Implement …" in Jira, or *Return* with a comment → *Implementation* waits until the ticket is done → ends as *Delivered*.
+
+The ticket's [Source document panel](jira.md#the-source-document-panel) tells the implementer which specification it comes from. Add more **Create ticket** actions to the *Approve* line if one specification means several tickets.
+
+States: *Draft*, *In implementation*, *Delivered*.
+
+### Decision record
+
+*Proposal* (the author clicks **Continue** when it is ready) → *Decide*: *Accept* (state *Decided*, a note is written as a comment on the page) or *Reject* with a reason (ends as *Rejected*) → *In force* until someone chooses *Mark as superseded* with a reason (ends as *Superseded*).
+
+*Superseded* and *Rejected* are in the group **Not valid**, so readers see the banner and [search](find-documents-by-state.md) can tell valid decisions from old ones.
+
+To e-mail people when a decision is accepted, select the *Accept* line, open the *Decision note* action and choose people under **Mention**.
+
+## Draw it yourself
+
+### Review, approval and yearly revision
+
+The *Document lifecycle* sample, step by step:
 
 1. **Document states** tab: *Draft* (In progress), *In review* (In progress), *Approved* (Valid), *Revision due* (Valid), *Retired* (Not valid).
 2. Figures, left to right:
@@ -32,33 +82,25 @@ To draw it yourself:
    - *Keep the document?* → *Retired*, label *Retire*, comment required.
 4. **Save**, **Publish**.
 
-What people see: after approval the badge says *LINA · Approved · Approved*; in a year a revision ticket appears in Jira; a retired policy shows the banner **This document is no longer valid**.
-
-## 2. A separate proofreading step
-
-*Before a handbook goes to approval, a language editor proofreads it in a ticket of its own.*
+### A separate proofreading step
 
 1. **Create** → **Create subprocess**, name it *Proofreading*:
    - Start → End *Proofread*. Under **Ends when** tick **All required tickets of this subprocess are done**.
    - Line Start → *Proofread*: **Create ticket** "Proofread {page}", required.
    - **Save**, **Publish**.
-2. In the main template, put a Subprocess figure before the approval and choose *Proofreading*. Optionally **When the subprocess ends, set the document state** to a state of your own, for example *Proofread*.
+2. In the main template, put a Subprocess figure before the approval and choose *Proofreading*. Optionally **When the subprocess ends, set the document state**.
 3. **Publish** the main template.
 
-The badge shows *Proofreading › Proofread* while the editor works; when the ticket is done, the main process goes on by itself.
-
-## 3. Every new procedure gets the process
-
-*Every new page under "Procedures" labelled `procedure` should start the approval by itself. An old page that gets the label later should not.*
+### Every new procedure gets the process
 
 1. Open the template and select **Start**.
-2. **How it starts** → **On a page event** → **Page created under a parent page**; **Space** and **Parent page** *Procedures*.
+2. **How it starts** → **On a page event** → **Page created under a parent page**; **Space** and **Parent page**.
 3. **And all of these hold** → **Add condition** → **Label** **is one of** `procedure`.
 4. **Publish**.
 
-New pages created with the label start the process. Adding the label to an existing page does nothing — that is intended. More in [Start a process automatically](start-automatically.md).
+More in [Start a process automatically](start-automatically.md).
 
-## 4. Someone left — move the document on
+## Someone left — move the document on
 
 *The document waits for the ticket of a colleague who has left.*
 
