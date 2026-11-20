@@ -6,7 +6,7 @@ Apps for Atlassian Cloud.
 
 A document in Confluence has a process. When it moves on, the work that follows from it is created in Jira — and the document does not move further until that work is done.
 
-- Documentation — coming soon
+- [Documentation](lina/index.md)
 - [Privacy policy](privacy.md)
 - [Terms of use](terms.md)
 
