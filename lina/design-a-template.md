@@ -2,11 +2,11 @@
 
 Templates are designed by Confluence admins in the LINA administration (tab **Templates**), and — if the app configuration allows it — by space admins for their own space (*Space settings* → *Integrations* → LINA → **Process templates**). The designer is the same in both places.
 
-The quickest start is a copy of a [sample template](examples.md#ready-made-sample-templates): select one marked **Bundled** and click **Copy**. Then change what you need.
+The quickest start is a copy of a [sample template](examples.md#ready-made-sample-templates): select one marked **Bundled** and click **Copy** (the two-sheet icon). Then change what you need.
 
 ## The designer at a glance
 
-- *Left:* the list of templates. **Create** → **Create process** or **Create subprocess**. Each template offers **View**, **Edit**, **Copy** and **Delete**.
+- *Left:* the list of templates. **Create** → **Create process** or **Create subprocess**. Each template has icon buttons for **View** (eye), **Edit** (pencil), **Copy** (two sheets) and **Delete** (bin); hover over an icon to see its name.
 - *Middle:* the canvas, with the **Objects** palette.
 - *Right:* **Selected object** — the properties of the figure or line you clicked.
 - *Top:* **Save** (keeps a draft) and **Publish** (checks the template and freezes it as a new version). Tabs **Document states** and **Administration** belong to the open template.
@@ -22,7 +22,7 @@ Each column can be folded to get more room for the canvas.
 
 ## Add figures
 
-Drag a figure from the **Objects** palette onto the canvas. New figures get a name like *Condition 1*; rename them in **Selected object** — the name is what people see on the page (*LINA · Review*).
+Drag a figure from the **Objects** palette onto the canvas. Hover over an object in the palette to see what it is for. The last icon in the palette header switches between pictures and **Text only**. New figures get a name like *Condition 1*; rename them in **Selected object** — the name is what people see on the page (*LINA · Review*).
 
 | In the palette | Figure |
 |---|---|
@@ -36,9 +36,9 @@ To delete a figure or line, select it and press Delete (or **Delete** in the pan
 
 ## Draw lines
 
-1. In the palette, pick **Line**.
+1. In the header of the **Objects** palette, click the line icon (**Draw a line**, two dots joined by a line).
 2. Click a figure, then another. A line joins them.
-3. The tool stays on for more lines. Pick **Line** again or press Esc to turn it off.
+3. After one line the designer goes back to moving and selecting (the hand icon, **Move and select**). For the next line, click the line icon again. Esc cancels.
 
 You can also drag from the dot on a figure's edge to another figure. Esc or a click on an empty spot cancels a half-drawn line.
 
