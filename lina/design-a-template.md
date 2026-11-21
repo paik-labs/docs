@@ -7,11 +7,11 @@ The quickest start is a copy of a [sample template](examples.md#ready-made-sampl
 ## The designer at a glance
 
 - *Left:* the list of templates. **Create** → **Create process** or **Create subprocess**. Each template has icon buttons for **View** (eye), **Edit** (pencil), **Copy** (two sheets) and **Delete** (bin); hover over an icon to see its name.
-- *Middle:* the canvas, with the **Objects** palette.
-- *Right:* **Selected object** — the properties of the figure or line you clicked.
+- *Middle:* the canvas, with the **Objects** palette. The double-arrow icon next to **Objects** opens all groups of the palette (**Expand all**) or folds them (**Collapse all**).
+- *Right:* **Selected object** — the properties of the figure or line you clicked. A click on a figure or line always switches to this tab.
 - *Top:* **Save** (keeps a draft) and **Publish** (checks the template and freezes it as a new version). Tabs **Document states** and **Administration** belong to the open template.
 
-Each column can be folded to get more room for the canvas.
+Each column can be folded to get more room for the canvas. The folded right panel still lists its tabs; click one to open it.
 
 ## Create a template
 
