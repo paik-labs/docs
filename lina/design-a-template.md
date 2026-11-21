@@ -9,7 +9,7 @@ The quickest start is a copy of a [sample template](examples.md#ready-made-sampl
 - *Left:* the list of templates. **Create** → **Create process** or **Create subprocess**. Each template has icon buttons for **View** (eye), **Edit** (pencil), **Copy** (two sheets) and **Delete** (bin); hover over an icon to see its name.
 - *Middle:* the canvas, with the **Objects** palette. The double-arrow icon next to **Objects** opens all groups of the palette (**Expand all**) or folds them (**Collapse all**).
 - *Right:* **Selected object** — the properties of the figure or line you clicked. A click on a figure or line always switches to this tab.
-- *Top:* **Save** (keeps a draft) and **Publish** (checks the template and freezes it as a new version). Tabs **Document states** and **Administration** belong to the open template.
+- *Top:* **Save** (keeps a draft) and **Publish** (checks the template and freezes it as a new version). Tabs **Document states** and **Settings** belong to the open template.
 
 Each column can be folded to get more room for the canvas. The folded right panel still lists its tabs; click one to open it.
 
@@ -82,7 +82,7 @@ Actions on the first line (from Start) run when the process starts.
 3. Tick **Required for approval (the gate waits for this ticket)** if the document must wait for it.
 4. **Copy the due date of the figure this line leads to into the ticket's Due date** is on by default — see [Due dates](due-dates.md#due-date-in-jira).
 
-Tickets are created as the template's **Service account** (see [Administration](#administration)), or by LINA itself when there is none.
+Tickets are created as the template's **Service account** (see [Settings](#settings)), or by LINA itself when there is none.
 
 ### Send e-mail
 
@@ -116,9 +116,9 @@ A subprocess is a template of type **Subprocess** (**Create** → **Create subpr
 - When a subprocess ends, it can set the document state (**When the subprocess ends, set the document state**).
 - On the page, the badge shows where the run is inside the subprocess, for example *Language review › Proofreading*.
 
-## Administration
+## Settings
 
-Tab **Administration** of a template:
+Tab **Settings** of a template:
 
 - **Service account** — the account that creates the tickets. Only Confluence admins can set it, and only from the [allowed list](app-configuration.md#allowed-service-accounts). Without it, LINA creates the tickets.
 - **Who may start and end this process** — for **Start** and **End** separately: **Anyone who can see the page**, **Anyone who can edit the page**, or **Only these people and groups**. Space admins may always start and end. People who may not start a template do not see it on the page. This applies after **Save**, without publishing.
