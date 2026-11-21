@@ -42,6 +42,8 @@ To delete a figure or line, select it and press Delete (or **Delete** in the pan
 
 You can also drag from the dot on a figure's edge to another figure. Esc or a click on an empty spot cancels a half-drawn line.
 
+Or right-click a figure and choose **Add line**, then click the figure the line leads to. Nothing leads out of an End, so there the item is greyed out.
+
 Start, a Condition and a Subprocess have *one* line out. If you draw a second line from a Condition, LINA inserts a **Manual fork** after it, and both lines go from the fork.
 
 ## Set what a Condition or End waits for
@@ -124,6 +126,7 @@ Tab **Administration** of a template:
 ## Save and publish
 
 - **Save** keeps a draft. Pages still use the last published version.
+- **Discard changes** throws away what you changed since the last **Save** and shows the last saved version again — handy after an accidental delete. LINA asks first; **Keep editing** goes back without discarding. There is no step-by-step undo.
 - **Publish** checks the saved template and freezes it as a new version. If something is missing, LINA lists what and where — for example *The line "Manual fork 1 → End" from the manual fork needs a label.* All checks are listed in [Publishing checks](reference/publish-checks.md).
 - Publishing also checks access in Jira: that the account creating tickets may create them in the project, that the issue type exists, and that mandatory fields are filled. It names what is missing.
 - If someone else saved the template in the meantime, LINA refuses to overwrite it — reload first.
