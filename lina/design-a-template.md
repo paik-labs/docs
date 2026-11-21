@@ -127,7 +127,7 @@ Tab **Settings** of a template:
 
 - **Save** keeps a draft. Pages still use the last published version.
 - **Discard changes** throws away what you changed since the last **Save** and shows the last saved version again — handy after an accidental delete. LINA asks first; **Keep editing** goes back without discarding. There is no step-by-step undo.
-- **Publish** checks the saved template and freezes it as a new version. If something is missing, LINA lists what and where — for example *The line "Manual fork 1 → End" from the manual fork needs a label.* All checks are listed in [Publishing checks](reference/publish-checks.md).
+- **Publish** checks the saved template and freezes it as a new version. If something is missing, LINA lists what and where — for example *The line "Manual fork 1 → End" from the manual fork needs a label.* All checks are listed in [Publishing checks](reference/publish-checks.md). The figures and lines named in the list are marked red on the canvas until you change something.
 - Publishing also checks access in Jira: that the account creating tickets may create them in the project, that the issue type exists, and that mandatory fields are filled. It names what is missing.
 - If someone else saved the template in the meantime, LINA refuses to overwrite it — reload first.
 
