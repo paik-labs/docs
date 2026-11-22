@@ -39,7 +39,16 @@
     hits.sort(function (a, b) { return b.score - a.score; });
     return hits.slice(0, 12).map(function (h) { return { x: h.e.x, words: words }; });
   }
+  // The index makes anchors with Liquid's slugify; kramdown keeps a double hyphen ("left — move" →
+  // "left--move"). Land on the heading anyway: compare ids with hyphens collapsed.
+  function landOnHash() {
+    var h = decodeURIComponent(location.hash.slice(1));
+    if (!h || document.getElementById(h)) return;
+    var all = document.querySelectorAll('[id]');
+    for (var i = 0; i < all.length; i++) if (all[i].id.replace(/-+/g, '-') === h) { all[i].scrollIntoView(); return; }
+  }
   function init() {
+    landOnHash();
     var body = document.querySelector('.markdown-body');
     if (!body) return;
     var style = document.createElement('style');
