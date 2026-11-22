@@ -48,7 +48,7 @@ When LINA cannot be sure — a ticket was deleted, Jira does not answer, a ticke
 
 ## History
 
-Every step goes to the run's history: who started the process, which line was taken, which tickets were created, who continued anyway and why. Automatic steps are recorded as **LINA**, together with the person who caused them (for example the author of a new page). See [Work with a process on a page](work-on-a-page.md#history).
+Every step goes to the run's history: who started the process, which line was taken, which tickets were created, who continued anyway and why. Automatic steps are recorded as **LINA**; a start by a template's rule as **LINA (rule)**, together with the person who caused it (the author of the new page). See [Work with a process on a page](work-on-a-page.md#history).
 
 ## Where LINA keeps its data
 

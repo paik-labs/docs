@@ -23,7 +23,7 @@ What never starts a process: adding a label later, moving a page, renaming it, o
 
 ## What happens
 
-- A new page that matches gets a running process within seconds. The history shows **LINA** as the one who started it, together with the person who created the page.
+- A new page that matches gets a running process within seconds. The history shows **LINA (rule)** as the one who started it, together with the person who created the page — for example *LINA (rule) started the process: the page was created by Ann Smith*.
 - If the page already runs a process, nothing happens.
 - Labels added while you write the page, before you publish it, count. A label added after publishing does not.
 - The template's start permissions (**Who may start and end this process**) do not apply to the rule.
