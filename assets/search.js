@@ -3,12 +3,20 @@
 // regard to case or accents; a hit in a page or section title ranks first. "/" focuses the box.
 (function () {
   if (!/^\/lina(\/|$)/.test(location.pathname)) return;
+  // #240 (22. 11. 2026): the Czech docs live under /lina/cs/. Search stays in the language of the page;
+  // the flags switch to the same page in the other language.
+  var CS = /^\/lina\/cs(\/|$)/.test(location.pathname);
+  var T = CS
+    ? { placeholder: 'Hledat v dokumentaci LINA (stiskněte /)', label: 'Hledat v dokumentaci LINA', none: 'Nic nenalezeno.' }
+    : { placeholder: 'Search the LINA docs (press /)', label: 'Search the LINA docs', none: 'Nothing found.' };
+  var inLang = function (u) { return /^\/lina\/cs\//.test(u) === CS; };
+  var page = location.pathname.replace(/^\/lina\/(cs\/)?/, '');
   var fold = function (s) { return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); };
   var esc = function (s) { return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   var index = null, loading = null;
   function load() {
     if (!loading) loading = fetch('/search.json').then(function (r) { return r.json(); }).then(function (xs) {
-      index = xs.map(function (x) { return { x: x, head: fold(x.t + ' ' + x.s), body: fold(x.c) }; });
+      index = xs.filter(function (x) { return inLang(x.u); }).map(function (x) { return { x: x, head: fold(x.t + ' ' + x.s), body: fold(x.c) }; });
     });
     return loading;
   }
@@ -57,20 +65,29 @@
     style.textContent = '.lina-search{position:relative;margin:0 0 24px}.lina-search input{width:100%;padding:8px 12px;font-size:16px;border:1px solid #d0d7de;border-radius:6px}' +
       '.lina-search ol{position:absolute;z-index:10;left:0;right:0;margin:4px 0 0;padding:0;list-style:none;background:#fff;border:1px solid #d0d7de;border-radius:6px;box-shadow:0 8px 24px rgba(140,149,159,.2);max-height:70vh;overflow:auto}' +
       '.lina-search li{margin:0;padding:8px 12px;border-bottom:1px solid #eaeef2}.lina-search li:last-child{border-bottom:0}.lina-search li.on{background:#f6f8fa}' +
-      '.lina-search li a{font-weight:600}.lina-search li small{display:block;color:#57606a;margin-top:2px}.lina-search .none{color:#57606a}';
+      '.lina-search li a{font-weight:600}.lina-search li small{display:block;color:#57606a;margin-top:2px}.lina-search .none{color:#57606a}' +
+      '.lina-lang{float:right;margin:-44px 0 0;font-size:14px}.lina-lang a,.lina-lang span{margin-left:12px;white-space:nowrap}.lina-lang span{font-weight:600}';
     document.head.appendChild(style);
     var box = document.createElement('div');
     box.className = 'lina-search';
     box.setAttribute('role', 'search');
-    box.innerHTML = '<input type="search" placeholder="Search the LINA docs (press /)" aria-label="Search the LINA docs" autocomplete="off"><ol hidden></ol>';
+    box.innerHTML = '<input type="search" placeholder="' + T.placeholder + '" aria-label="' + T.label + '" autocomplete="off"><ol hidden></ol>';
     var header = body.querySelector('h1');
     body.insertBefore(box, header && header.parentNode === body ? header.nextSibling : body.firstChild);
+    var lang = document.createElement('nav');
+    lang.className = 'lina-lang';
+    lang.setAttribute('aria-label', CS ? 'Jazyk' : 'Language');
+    var en = '/lina/' + page, cs = '/lina/cs/' + page; // headings differ by language, so no anchor
+    lang.innerHTML = CS
+      ? '<a href="' + esc(en) + '" hreflang="en" lang="en">🇬🇧 English</a><span>🇨🇿 Česky</span>'
+      : '<span>🇬🇧 English</span><a href="' + esc(cs) + '" hreflang="cs" lang="cs">🇨🇿 Česky</a>';
+    body.insertBefore(lang, box);
     var input = box.querySelector('input'), list = box.querySelector('ol'), active = -1, results = [];
     function render() {
       results = search(input.value);
       active = results.length > 0 ? 0 : -1;
       if (input.value.trim() === '') { list.hidden = true; return; }
-      list.innerHTML = results.length === 0 ? '<li class="none">Nothing found.</li>' : results.map(function (r, i) {
+      list.innerHTML = results.length === 0 ? '<li class="none">' + T.none + '</li>' : results.map(function (r, i) {
         return '<li' + (i === 0 ? ' class="on"' : '') + '><a href="' + esc(r.x.u) + '">' + esc(r.x.t) + (r.x.s ? ' › ' + esc(r.x.s) : '') + '</a><small>' + snippet(r.x.c, r.words) + '</small></li>';
       }).join('');
       list.hidden = false;
