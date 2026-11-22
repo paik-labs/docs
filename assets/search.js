@@ -26,11 +26,22 @@
     var from = Math.max(0, at - 60);
     if (from > 0) { var sp = text.indexOf(' ', from); if (sp >= 0 && sp < at) from = sp + 1; }
     var part = text.slice(from, from + 200);
-    var out = esc(part);
+    // Mark the words where they stand, also when the query is typed without accents ("presto" → "Přesto"):
+    // fold the part character by character, so positions in the folded text match the original.
+    var folded = Array.prototype.map.call(part, function (ch) { return fold(ch).charAt(0) || ch; }).join('');
+    var marks = [];
     words.forEach(function (w) {
       if (w.length < 2) return;
-      out = out.replace(new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi'), '<mark>$1</mark>');
+      for (var i = folded.indexOf(w); i >= 0; i = folded.indexOf(w, i + w.length)) marks.push([i, i + w.length]);
     });
+    marks.sort(function (a, b) { return a[0] - b[0]; });
+    var out = '', at = 0;
+    marks.forEach(function (m) {
+      if (m[0] < at) return;
+      out += esc(part.slice(at, m[0])) + '<mark>' + esc(part.slice(m[0], m[1])) + '</mark>';
+      at = m[1];
+    });
+    out += esc(part.slice(at));
     return (from > 0 ? '… ' : '') + out + (from + 200 < text.length ? ' …' : '');
   }
   function search(q) {
