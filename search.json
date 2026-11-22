@@ -1,0 +1,29 @@
+---
+layout: null
+sitemap: false
+---
+{%- comment -%}
+Search index of the LINA docs (paik-labs/lina userdocs, 22. 11. 2026): one entry per page section
+(the intro and every "## " heading), plain text. Read by assets/search.js; nothing leaves the site.
+{%- endcomment -%}
+[
+{%- assign first = true -%}
+{%- for p in site.pages -%}
+{%- unless p.url contains '/lina/' and p.name contains '.md' -%}{%- continue -%}{%- endunless -%}
+{%- assign title = p.url -%}
+{%- assign lines = p.content | split: "
+" -%}
+{%- for l in lines -%}{%- assign h = l | slice: 0, 2 -%}{%- if h == '# ' -%}{%- assign title = l | remove_first: '# ' | strip -%}{%- break -%}{%- endif -%}{%- endfor -%}
+{%- assign parts = p.content | split: "
+## " -%}
+{%- for part in parts -%}
+{%- if forloop.first -%}{%- assign heading = '' -%}{%- assign body = part -%}{%- assign anchor = '' -%}
+{%- else -%}{%- assign rows = part | split: "
+" -%}{%- assign heading = rows.first | strip -%}{%- assign body = part | remove_first: rows.first -%}{%- assign anchor = heading | slugify | prepend: '#' -%}{%- endif -%}
+{%- assign text = body | markdownify | strip_html | normalize_whitespace | strip -%}
+{%- if text == '' and heading == '' -%}{%- continue -%}{%- endif -%}
+{%- unless first -%},{%- endunless -%}{%- assign first = false %}
+{"t":{{ title | jsonify }},"s":{{ heading | jsonify }},"u":{{ p.url | append: anchor | relative_url | jsonify }},"c":{{ text | jsonify }}}
+{%- endfor -%}
+{%- endfor %}
+]
