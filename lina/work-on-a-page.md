@@ -2,6 +2,8 @@
 
 Everything happens in the **LINA** badge next to the page title. Click it to open the panel.
 
+![The LINA badge next to a page title](assets/screens/page-badge.png)
+
 The badge shows where the document is:
 
 | Badge | Meaning |
@@ -24,6 +26,8 @@ You see only templates you may start on this page. If the list is empty: *No pro
 
 ## See what the document waits for
 
+![A page waiting for its review ticket](assets/screens/page-waiting.png)
+
 When the process is at a Condition or End that waits, the panel shows:
 
 - every ticket created on the way, with its Jira status and a link; tickets that are not required are marked *(not required)*;
@@ -40,6 +44,8 @@ If a ticket cannot be read — *Not found in Jira, or LINA may not see it.* — 
 If the figure waits for **A person confirms (clicks Continue)**, click **Continue** once everything else holds. If not everything holds, LINA refreshes the list and tells you what is missing.
 
 ## Choose how to continue
+
+![A manual fork: Approve or Reject](assets/screens/page-fork.png)
 
 At a manual fork, the panel shows **Choose how to continue** with one button per branch, for example *Approve* and *Reject*. Some branches need a comment: write it and confirm. The comment goes to the history.
 
@@ -73,6 +79,8 @@ The template decides who may end a process. If you may not: *The template of thi
 To use a different process on the page, end the running one and start the new one. A running process cannot be swapped.
 
 ## History
+
+![The history of a process on a page](assets/screens/page-history.png)
 
 Click **Show history**. The newest entries are first; **More** loads older ones. Each entry says who did what and when — for example *started the process*, *created ticket DOC-12 (as the app)*, *continued Review anyway: author left the company*. Ticket keys link to Jira, e-mail entries link to the comment on the page.
 

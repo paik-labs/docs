@@ -51,15 +51,16 @@ The messages say what to fix. For the figures and fields they mention, see [Desi
 
 ## Document states
 
-- Document state ‹number› has no name.
-- Two document states are called "‹name›".
-- The document state "‹name›" has no group (in progress / valid / not valid).
+- Document state ‹number› has no name. Name it or remove it on the Document states tab.
+- Two document states are called "‹name›". Rename one on the Document states tab.
+- The document state "‹name›" has no group (in progress / valid / not valid). Choose one on the Document states tab.
 - The action "‹name›": choose the document state.
 - The end "‹name›": choose the document state.
 - The subprocess "‹name›": choose the document state.
 - The line "‹name›" from the fork: choose the document state.
 - The action "‹name›": the chosen document state is no longer in the template's list.
 - The end "‹name›": the chosen document state is no longer in the template's list.
+- The start "‹name›": the chosen document state is no longer in the template's list.
 - The subprocess "‹name›": the chosen document state is no longer in the template's list.
 - The line "‹name›" from the fork: the chosen document state is no longer in the template's list.
 

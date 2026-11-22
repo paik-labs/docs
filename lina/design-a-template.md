@@ -6,10 +6,14 @@ The quickest start is a copy of a [sample template](examples.md#ready-made-sampl
 
 ## The designer at a glance
 
-- *Left:* the list of templates. **Create** → **Create process** or **Create subprocess**. Each template has icon buttons for **View** (eye), **Edit** (pencil), **Copy** (two sheets) and **Delete** (bin); hover over an icon to see its name.
+![The template designer](assets/screens/designer.png)
+
+- *Left:* the list of templates. **Create** → **Create process** or **Create subprocess**. Each template has icon buttons for **View** (eye), **Edit** (pencil), **Copy** (two sheets) and **Delete** (bin); hover over an icon to see its name. **Search** above the list finds templates by name or description (upper / lower case and accents do not matter).
 - *Middle:* the canvas, with the **Objects** palette. The double-arrow icon next to **Objects** opens all groups of the palette (**Expand all**) or folds them (**Collapse all**).
 - *Right:* **Selected object** — the properties of the figure or line you clicked. A click on a figure or line always switches to this tab.
 - *Top:* **Save** (keeps a draft) and **Publish** (checks the template and freezes it as a new version). Tabs **Document states** and **Settings** belong to the open template.
+
+When you let go of a figure, its centre settles on the nearest dot of the canvas, so figures line up easily. **Tidy up the drawing** (the button under the zoom buttons, bottom left) puts all figures in columns and rows from Start and lines back on their automatic route; **Save** keeps the result, **Discard changes** takes it back.
 
 Each column can be folded to get more room for the canvas. The folded right panel still lists its tabs; click one to open it.
 
@@ -36,13 +40,21 @@ To delete a figure or line, select it and press Delete (or **Delete** in the pan
 
 ## Draw lines
 
+![A selected line and its panel](assets/screens/designer-line.png)
+
 1. In the header of the **Objects** palette, click the line icon (**Draw a line**, two dots joined by a line).
 2. Click a figure, then another. A line joins them.
-3. After one line the designer goes back to moving and selecting (the hand icon, **Move and select**). For the next line, click the line icon again. Esc cancels.
+3. The line tool stays on, so you can draw the next line right away. Switch back to moving and selecting with the hand icon (**Move and select**), or press Esc.
 
 You can also drag from the dot on a figure's edge to another figure. Esc or a click on an empty spot cancels a half-drawn line.
 
 Or right-click a figure and choose **Add line**, then click the figure the line leads to. Nothing leads out of an End, so there the item is greyed out.
+
+To move a line, drag one of its ends onto another figure — over a line end the cursor turns into a pencil. The line keeps its actions and settings. The same rules apply as for drawing: no line into Start or out of an End, and a second line out of a Condition gets a Manual fork.
+
+A new line picks its sides **Automatically** — by where the other figure is (to the right: out right, in left; below: out bottom, in top), and follows when you move a figure. Lines drawn before this leave on the right and enter on the left. Each figure has a dot on all four sides; the dots show when you point at the figure or draw a line. The dot under a figure sits below its name and marks. Drag a line end onto another dot to use that side, or select the line and choose **Leaves at** and **Enters at** (**Automatically**, **Right**, **Bottom**, **Top**, **Left**). A side you choose stays as chosen. Where two lines end at the same dot, select the one you want first — dragging takes the selected line.
+
+On a selected line, its label in the middle (the condition and action circles, framed in blue) is a grip; a line without a label shows a small square instead. Drag it to move the line across, for example away from another line or figure. Only the direction across the line counts; a straight line between two figures in a row has nothing to move. Double-click the grip, or click **Automatic route again** in the line's panel, to let LINA route the line by itself again. The run view on a page shows the line the same way.
 
 Start, a Condition and a Subprocess have *one* line out. If you draw a second line from a Condition, LINA inserts a **Manual fork** after it, and both lines go from the fork.
 
@@ -127,7 +139,7 @@ Tab **Settings** of a template:
 
 - **Save** keeps a draft. Pages still use the last published version.
 - **Discard changes** throws away what you changed since the last **Save** and shows the last saved version again — handy after an accidental delete. LINA asks first; **Keep editing** goes back without discarding. There is no step-by-step undo.
-- **Publish** checks the saved template and freezes it as a new version. If something is missing, LINA lists what and where — for example *The line "Manual fork 1 → End" from the manual fork needs a label.* All checks are listed in [Publishing checks](reference/publish-checks.md). The figures and lines named in the list are marked red on the canvas until you change something.
+- **Publish** checks the saved template and freezes it as a new version. If something is missing, LINA lists what and where — for example *The line "Manual fork 1 → End" from the manual fork needs a label.* All checks are listed in [Publishing checks](reference/publish-checks.md). The figures and lines named in the list are marked red on the canvas until you change something. A problem with a document state (no name, no group, the same name twice) marks the **Document states** tab red instead.
 - Publishing also checks access in Jira: that the account creating tickets may create them in the project, that the issue type exists, and that mandatory fields are filled. It names what is missing.
 - If someone else saved the template in the meantime, LINA refuses to overwrite it — reload first.
 

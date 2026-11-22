@@ -2,6 +2,8 @@
 
 Space admins set how LINA behaves in their space: *Space settings* → *Integrations* → LINA. The **Settings** tab is described here; **Process templates** (when the app allows templates in spaces) is the [designer](design-a-template.md) for this space.
 
+![LINA in the space settings](assets/screens/space-settings.png)
+
 Personal spaces have no LINA settings; the defaults apply.
 
 ## When is a ticket done?

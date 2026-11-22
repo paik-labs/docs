@@ -2,6 +2,8 @@
 
 **Processes in this space** lists the documents of one space and where their processes are. Open it from the space sidebar: *Space apps* → LINA.
 
+![The overview of processes in a space](assets/screens/space-overview.png)
+
 ## Views
 
 | View | Shows |

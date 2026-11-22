@@ -17,6 +17,8 @@ Space admins without Confluence admin rights can start the sample from the [spac
 
 ## Try it on a sample document
 
+![The Get started tab in the LINA administration](assets/screens/admin-get-started.png)
+
 On **Get started**:
 
 1. **Space for the sample page** — choose the space.
@@ -33,6 +35,8 @@ LINA creates:
 Click **Open the sample page**.
 
 ## What to look at
+
+![An empty space overview offers the sample](assets/screens/space-overview-empty.png)
 
 1. *The badge next to the page title* shows where the document is, for example *LINA · In review · Review*. Click it.
 2. The panel lists the review ticket, its status in Jira and *1 of 1 required tickets are not done*. There is nothing to click: the page waits.

@@ -39,6 +39,9 @@ Ask a Confluence admin to set it, or leave **Service account** empty — LINA th
 ### This subprocess cannot be deleted while another template uses it.
 Remove it from the templates that use it first. The designer names them.
 
+### Unknown user
+Confluence returned no name for a person chosen in the template — usually an account that was deleted or deactivated. Remove the person (×) and choose someone else. Hover over the name to see the account ID.
+
 ### The ticket form shows few projects or fields.
 The form reads Jira with the rights of the template's service account (after **Save**), or LINA's when there is none. Projects the account cannot create issues in are not offered.
 

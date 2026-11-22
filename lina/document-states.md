@@ -2,6 +2,8 @@
 
 A document state says what the document *is*: *Draft*, *Approved*, *Revision due*, *Retired*. It is separate from where the process is, and it *stays after the process ends* — an approved policy stays *Approved* although nothing runs on it.
 
+![The Document states tab](assets/screens/designer-states.png)
+
 ## Define states in a template
 
 Open the template's **Document states** tab:
@@ -17,7 +19,9 @@ The group lets LINA treat states of different templates alike: the space overvie
 
 ## Change the state
 
+- On **Start**: **When the process starts, set the document state** — the document has the state from its first moment, whether a person starts the process or a rule does.
 - **Set state** action on a line — the state changes when the process takes the line.
+  A **Set state** on the line out of Start runs right after Start, so its state is the one that stays.
 - On an **End**: **When the process ends here, set the document state**.
 - On a **Subprocess**: **When the subprocess ends, set the document state**.
 - When someone ends a process early, they choose **Document state after ending**.

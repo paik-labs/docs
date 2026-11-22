@@ -2,6 +2,8 @@
 
 LINA needs no setup in Jira. It creates tickets from Confluence, and reads them when a document waits.
 
+![The LINA panel on a Jira ticket](assets/screens/jira-panel.png)
+
 ## Tickets created by a process
 
 - A ticket is created by a **Create ticket** action on a line of the template — in the project, with the issue type and fields chosen in the [designer](design-a-template.md#create-ticket).
