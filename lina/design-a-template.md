@@ -8,7 +8,7 @@ The quickest start is a copy of a [sample template](examples.md#ready-made-sampl
 
 ![The template designer](assets/screens/designer.png)
 
-- *Left:* the list of templates. **Create** → **Create process** or **Create subprocess**. Each template has icon buttons for **View** (eye), **Edit** (pencil), **Copy** (two sheets) and **Delete** (bin); hover over an icon to see its name. **Search** above the list finds templates by name or description (upper / lower case and accents do not matter).
+- *Left:* the list of templates. **Create** → **Create process** or **Create subprocess**. Each template has icon buttons for **View** (eye), **Edit** (pencil), **Copy** (two sheets), **Export** (arrow down) and **Delete** (bin); hover over an icon to see its name. **Search** above the list finds templates by name or description (upper / lower case and accents do not matter).
 - *Middle:* the canvas, with the **Objects** palette. The double-arrow icon next to **Objects** opens all groups of the palette (**Expand all**) or folds them (**Collapse all**).
 - *Right:* **Selected object** — the properties of the figure or line you clicked. A click on a figure or line always switches to this tab.
 - *Top:* **Save** (keeps a draft) and **Publish** (checks the template and freezes it as a new version). Tabs **Document states** and **Settings** belong to the open template.
@@ -149,6 +149,16 @@ Runs that already started keep the version they started with.
 
 - **Copy** makes a new draft template with the same drawing and states. The service account is not copied.
 - **Delete** removes the template. Running processes finish by the copy they started with. A subprocess template that another template uses cannot be deleted.
+
+## Export and import
+
+Use a file to back up your templates or to bring the same process to another Confluence site.
+
+- **Export** (arrow down on a template) downloads the template as a JSON file, together with the subprocess templates it uses.
+- **Export all** above the list downloads every template of this place in one file: in the app administration the global templates, in *Space settings* → *LINA* the templates of that space. Sample templates and global templates shown in a space are not included — copy them first.
+- **Import…** reads such a file and adds each template as a new *draft*; nothing is published by itself. A template whose name is taken gets "(imported)" at the end. Subprocess figures point at the subprocess templates imported with them.
+
+What the file carries: the name, description, scope, who may start and end, the drawing and the states. What it does not: the service account, the owner, published versions and running processes. Jira projects, people and spaces in the drawing stay as they were — on another site check them before you publish; publishing tells you what is missing. In a space, an imported template is always scoped to that space.
 
 ## Sample templates
 

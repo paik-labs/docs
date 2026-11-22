@@ -8,7 +8,7 @@ Nejrychlejší začátek je kopie [ukázkové šablony](examples.md#hotové-uká
 
 ![Návrhář šablon](../assets/screens/designer.png)
 
-- *Vlevo:* seznam šablon. **Vytvořit** → **Vytvořit proces** nebo **Vytvořit podproces**. Každá šablona má ikony **Zobrazit** (oko), **Upravit** (tužka), **Kopírovat** (dva listy) a **Smazat** (koš); po najetí myší na ikonu uvidíte její název. **Hledat** nad seznamem najde šablony podle názvu nebo popisu (na velkých / malých písmenech a diakritice nezáleží).
+- *Vlevo:* seznam šablon. **Vytvořit** → **Vytvořit proces** nebo **Vytvořit podproces**. Každá šablona má ikony **Zobrazit** (oko), **Upravit** (tužka), **Kopírovat** (dva listy), **Exportovat** (šipka dolů) a **Smazat** (koš); po najetí myší na ikonu uvidíte její název. **Hledat** nad seznamem najde šablony podle názvu nebo popisu (na velkých / malých písmenech a diakritice nezáleží).
 - *Uprostřed:* plocha s paletou **Objekty**. Ikona dvojité šipky vedle **Objekty** rozbalí všechny skupiny palety (**Rozbalit vše**) nebo je sbalí (**Sbalit vše**).
 - *Vpravo:* **Vybraný objekt** — vlastnosti figury nebo čáry, na kterou jste klikli. Klik na figuru nebo čáru vždy přepne na tuto záložku.
 - *Nahoře:* **Uložit** (uchová koncept) a **Publikovat** (šablonu zkontroluje a zmrazí jako novou verzi). Záložky **Stavy dokumentu** a **Nastavení** patří otevřené šabloně.
@@ -149,6 +149,16 @@ Běhy, které už začaly, si ponechají verzi, se kterou začaly.
 
 - **Kopírovat** vytvoří nový koncept šablony se stejným nákresem a stavy. Servisní účet se nekopíruje.
 - **Smazat** šablonu odstraní. Běžící procesy doběhnou podle kopie, se kterou začaly. Šablonu podprocesu, kterou používá jiná šablona, smazat nejde.
+
+## Export a import
+
+Soubor poslouží jako záloha šablon, nebo k přenesení stejného procesu na jiný Confluence site.
+
+- **Exportovat** (šipka dolů u šablony) stáhne šablonu jako soubor JSON i se šablonami podprocesů, které používá.
+- **Exportovat vše** nad seznamem stáhne všechny šablony daného místa do jednoho souboru: v administraci aplikace globální šablony, v *Nastavení prostoru* → *LINA* šablony toho prostoru. Ukázkové šablony a globální šablony zobrazené v prostoru v souboru nejsou — nejdřív si je zkopírujte.
+- **Importovat…** takový soubor načte a každou šablonu přidá jako nový *koncept*; nic se samo nepublikuje. Šablona, jejíž název je obsazený, dostane na konec „(imported)“. Figury podprocesu ukazují na šablony podprocesů importované s nimi.
+
+Co soubor nese: název, popis, rozsah, kdo smí spustit a ukončit, nákres a stavy. Co nenese: servisní účet, vlastníka, publikované verze a běžící procesy. Projekty v Jiře, lidé a prostory v nákresu zůstanou, jak byly — na jiném siteu je před publikací zkontrolujte; publikace řekne, co chybí. V prostoru je importovaná šablona vždy omezená na ten prostor.
 
 ## Ukázkové šablony
 
