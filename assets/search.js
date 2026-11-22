@@ -15,7 +15,9 @@
   function snippet(text, words) {
     var f = fold(text), at = -1;
     for (var i = 0; i < words.length && at < 0; i++) at = f.indexOf(words[i]);
-    var from = Math.max(0, at - 60), part = text.slice(from, from + 200);
+    var from = Math.max(0, at - 60);
+    if (from > 0) { var sp = text.indexOf(' ', from); if (sp >= 0 && sp < at) from = sp + 1; }
+    var part = text.slice(from, from + 200);
     var out = esc(part);
     words.forEach(function (w) {
       if (w.length < 2) return;
